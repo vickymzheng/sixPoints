@@ -1,0 +1,15 @@
+Sync up with events calendar to see how it will affect available parking 
+Integrate GPS/map that would be able to show users where the nearest parking is
+Supply parking rules for different lots  
+Suggested best lot 
+
+Check in and check out features, and having timers of how long they'll be there
+	Example: I have class for 4 hours, so I'll set my timer for 4 hours so other users can see when my spot will be available 
+Some kind of reporting/submission to be able to record data for real time updates
+	***Have realistic, reasonable mock data just incase***
+Have preferences for where they would want to park
+Be able to return a prediction for what time they should try to get to the parking lot for a spot
+
+
+Tasks: 
+-FIND OUT IF WE CAN USE UB LOGOS
