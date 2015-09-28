@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="744.09448819"
@@ -19,7 +20,31 @@
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
-     id="defs4" />
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3797">
+      <stop
+         style="stop-color:#676767;stop-opacity:1;"
+         offset="0"
+         id="stop3799" />
+      <stop
+         style="stop-color:#676767;stop-opacity:0;"
+         offset="1"
+         id="stop3801" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3797"
+       id="radialGradient3803"
+       cx="258.04639"
+       cy="451.05644"
+       fx="258.04639"
+       fy="451.05644"
+       r="18.337187"
+       gradientTransform="matrix(1,0,0,0.75802246,0,109.14553)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -27,9 +52,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="298.12985"
-     inkscape:cy="682.0673"
+     inkscape:zoom="2"
+     inkscape:cx="301.86865"
+     inkscape:cy="683.54459"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -46,7 +71,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -67,36 +92,67 @@
        id="rect3029"
        width="218.57144"
        height="179.99995"
-       x="204.00354"
-       y="306.18362"
+       x="203.64998"
+       y="305.47656"
        ry="10" />
+    <rect
+       style="fill:#003ecd;fill-opacity:0.50299401"
+       id="rect3805"
+       width="206.82872"
+       height="169.35207"
+       x="209.30359"
+       y="311.3143"
+       ry="39.5"
+       rx="43.397339" />
     <flowRoot
        xml:space="preserve"
-       id="flowRoot3031"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(6.4429295,46.06066)"><flowRegion
-         id="flowRegion3033"><rect
-           id="rect3035"
-           width="52.334927"
-           height="45.240513"
-           x="228.92857"
-           y="344.14789"
-           ry="0.35355338" /></flowRegion><flowPara
-         id="flowPara3058"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Patua One;-inkscape-font-specification:Patua One">six</flowPara></flowRoot>    <flowRoot
-       xml:space="preserve"
        id="flowRoot3060"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:PlainBlack;-inkscape-font-specification:PlainBlack"
-       transform="translate(22.860733,26.778536)"><flowRegion
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#f3ff00;fill-opacity:1;stroke:none;font-family:PlainBlack;-inkscape-font-specification:PlainBlack"
+       transform="translate(22.735733,26.903536)"><flowRegion
          id="flowRegion3062"><rect
            id="rect3064"
            width="114.26958"
            height="49.350334"
            x="265.35715"
            y="399.50504"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PlainBlack;-inkscape-font-specification:PlainBlack" /></flowRegion><flowPara
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#f3ff00;fill-opacity:1;font-family:PlainBlack;-inkscape-font-specification:PlainBlack" /></flowRegion><flowPara
          id="flowPara3066"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Patua One;-inkscape-font-specification:Patua One">Points</flowPara></flowRoot>    <flowRoot
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#f3ff00;fill-opacity:1;font-family:Patua One;-inkscape-font-specification:Patua One">Points</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3031"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#f3ff00;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(6.6929295,45.93566)"><flowRegion
+         id="flowRegion3033"><rect
+           id="rect3035"
+           width="52.334927"
+           height="45.240513"
+           x="228.92857"
+           y="344.14789"
+           ry="0.35355338"
+           style="fill:#f3ff00;fill-opacity:1" /></flowRegion><flowPara
+         id="flowPara3058"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#f3ff00;fill-opacity:1;font-family:Patua One;-inkscape-font-specification:Patua One">six</flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:140px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#f3ff00;fill-opacity:1;stroke:none;font-family:Patua One;-inkscape-font-specification:Patua One"
+       x="240.3342"
+       y="465.75644"
+       id="text3011"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3013"
+         x="240.3342"
+         y="465.75644"
+         style="font-size:40px;fill:#f3ff00;fill-opacity:1">VI</tspan></text>
+    <rect
+       style="fill:#000000"
+       id="rect3015"
+       width="218.58179"
+       height="8.8817139"
+       x="203.64874"
+       y="429.40109"
+       ry="0"
+       rx="0" />
+    <flowRoot
        xml:space="preserve"
        id="flowRoot2993"
        style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
@@ -106,42 +162,7 @@
            height="73.928574"
            x="519.28571"
            y="280.93362" /></flowRegion><flowPara
-         id="flowPara2999" /></flowRoot>    <flowRoot
-       xml:space="preserve"
-       id="flowRoot3001"
-       style="font-size:90px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Patua One;-inkscape-font-specification:Patua One"
-       transform="translate(24.088835,-39.471825)"><flowRegion
-         id="flowRegion3003"><rect
-           id="rect3005"
-           width="89.428589"
-           height="166.85712"
-           x="292.14285"
-           y="318.79077"
-           style="font-size:90px"
-           ry="2.8571429" /></flowRegion><flowPara
-         id="flowPara3007"
-         style="font-size:140px;font-weight:bold;-inkscape-font-specification:Patua One Bold">P</flowPara></flowRoot>    <text
-       xml:space="preserve"
-       style="font-size:140px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Patua One;-inkscape-font-specification:Patua One"
-       x="239.7092"
-       y="464.75644"
-       id="text3011"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3013"
-         x="239.7092"
-         y="464.75644"
-         style="font-size:40px">VI</tspan></text>
-    <rect
-       style="fill:#000000"
-       id="rect3015"
-       width="218.58179"
-       height="8.8817139"
-       x="204.00031"
-       y="429.40109"
-       ry="0"
-       rx="0" />
-    <rect
+         id="flowPara2999" /></flowRoot>    <rect
        style="fill:#ffff00"
        id="rect3017"
        width="9.25"
@@ -239,7 +260,7 @@
        ry="1.125" />
     <g
        id="g3311"
-       transform="translate(-228.17678,279.01561)">
+       transform="translate(-225.17678,277.51561)">
       <g
          style="fill:#000080"
          transform="matrix(0.94771866,0,0,0.71259543,1.9551572,30.399868)"
@@ -402,5 +423,19 @@
          id="rect3226-9"
          style="fill:#000080" />
     </g>
-  </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3001"
+       style="font-size:90px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Patua One;-inkscape-font-specification:Patua One"
+       transform="translate(28.331476,-35.936291)"><flowRegion
+         id="flowRegion3003"><rect
+           id="rect3005"
+           width="89.428589"
+           height="166.85712"
+           x="292.14285"
+           y="318.79077"
+           style="font-size:90px;fill:#000000;fill-opacity:1"
+           ry="2.8571429" /></flowRegion><flowPara
+         id="flowPara3007"
+         style="font-size:140px;font-weight:bold;-inkscape-font-specification:Patua One Bold;fill:#000000;fill-opacity:1">P</flowPara></flowRoot>  </g>
 </svg>
