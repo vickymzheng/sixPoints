@@ -2,11 +2,10 @@
 <TextView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textSize="20sp"
+    android:layout_height="match_parent"
+    android:textSize="18sp"
     android:gravity="center"
-    android:layout_marginBottom="166dp"
-    android:background="#282726"
+    android:background="#2f2e2d"
     android:textColor="#fffa00"
     android:padding="5dip"
     />
