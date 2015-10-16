@@ -6,10 +6,14 @@
     <string name="spinner_titleThen">Parking Lots</string>
     <string name="prefs">Settings</string>
     <string name="site">sixhundredproints.appspot.com</string>
-    <string name="calander">calander</string>
     <string name="curLot">Lot:</string>
     <string name="sug">Best:</string>
     <string name="rating">Rating:</string>
+    <string name="ratehint">Rating of lot availability</string>
+    <string name="lothint">Lot you selected</string>
+    <string name="besthint">Suggest lot to park in</string>
+    <string name="website">Visit us</string>
+    <string name="mapDescript">Map of UB North</string>
 
     <string-array name="map_array">
         <item>Jacobs A</item>
@@ -83,7 +87,7 @@
         <item>August</item>
         <item>September</item>
         <item>October</item>
-        <item>Novermber</item>
+        <item>November</item>
         <item>December</item>
     </string-array>
 </resources>
