@@ -1,23 +1,16 @@
 package app.sixpts;
 
-import android.content.res.Resources;
-import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
-
-import java.lang.reflect.Field;
 
 public class Main extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Spinner lotSpinner;
@@ -26,13 +19,17 @@ public class Main extends AppCompatActivity implements AdapterView.OnItemSelecte
     Spinner minuteSpinner;
     Spinner apmSpinner;
     Spinner monthSpinner;
-    TimePicker timePicker;
-    Resources system;
+    EditText current;
+    EditText suggested;
+    EditText suggestedRating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        current = (EditText) findViewById(R.id.curLotValueText);
+        suggested = (EditText) findViewById(R.id.sugLotValueText);
+        suggestedRating = (EditText) findViewById(R.id.rateValueText);
 
         lotSpinner = (Spinner) findViewById(R.id.mapSpinner);
         ArrayAdapter mapAdapter = ArrayAdapter.createFromResource(this, R.array.map_array, R.layout.lotspinner_layout);
@@ -91,7 +88,10 @@ public class Main extends AppCompatActivity implements AdapterView.OnItemSelecte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         TextView myText = (TextView) view;
-        Toast.makeText(this, "Selected " + lotSpinner.getSelectedItem(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "She's Available", Toast.LENGTH_SHORT).show();
+        current.setText((String) lotSpinner.getSelectedItem());
+        suggested.setText("Your Mom");
+        suggestedRating.setText("10");
     }
 
     @Override
