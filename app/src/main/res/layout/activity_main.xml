@@ -85,7 +85,6 @@
             android:background="#2f2e2d"
             android:textColor="#fffa00"
             android:textSize="20sp"
-            android:hint="@string/besthint"
             android:editable="false"/>
 
         <EditText
@@ -106,7 +105,6 @@
             android:background="#2f2e2d"
             android:textColor="#fffa00"
             android:textSize="20sp"
-            android:hint="@string/ratehint"
             android:editable="false"/>
 
     </LinearLayout>

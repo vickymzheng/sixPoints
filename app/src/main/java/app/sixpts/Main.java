@@ -88,10 +88,10 @@ public class Main extends AppCompatActivity implements AdapterView.OnItemSelecte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         TextView myText = (TextView) view;
-        Toast.makeText(this, "She's Available", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "She's Available", Toast.LENGTH_SHORT).show();
         current.setText((String) lotSpinner.getSelectedItem());
-        suggested.setText("Your Mom");
-        suggestedRating.setText("10");
+        //suggested.setText("Your Mom");
+        //suggestedRating.setText("10");
     }
 
     @Override
