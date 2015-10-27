@@ -27,8 +27,13 @@ class Handler(webapp2.RequestHandler):
 
 class MainPage(Handler):
 	def get(self):
-		self.render('homePage.html', title = 'Driver')
+		self.render('homePage.html', title = 'Six Points')
+
+class detailPage(Handler):
+	def get(self):
+		self.render('details.html', title = 'Six Points - Details')
 
 app = webapp2.WSGIApplication([('/', MainPage),
-								('/webHandler', Handler)],
+								('/webHandler', Handler),
+								('/details', detailPage)],
                               debug=True)
