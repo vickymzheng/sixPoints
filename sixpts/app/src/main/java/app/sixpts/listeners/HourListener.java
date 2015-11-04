@@ -23,6 +23,7 @@ public class HourListener implements AdapterView.OnItemSelectedListener {
     public HourListener(Spinner spin, Data data) {
         _data = data;
         _spin = spin;
+        _spin.setSelection(_data.getHour());
     }
 
     /**

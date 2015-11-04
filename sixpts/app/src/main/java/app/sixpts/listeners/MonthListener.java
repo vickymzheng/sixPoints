@@ -20,9 +20,10 @@ public class MonthListener implements AdapterView.OnItemSelectedListener {
     public MonthListener(Spinner spin, Data data) {
         _data = data;
         _spin = spin;
+        _spin.setSelection(_data.getMonth());
         _map = new HashMap<String, Integer>();
         for(int i = 0; i < 12; ++i) {
-            switch(i) {
+            switch (i) {
                 case 0:
                     _map.put("January", 0);
                     break;
@@ -60,7 +61,6 @@ public class MonthListener implements AdapterView.OnItemSelectedListener {
                     _map.put("December", 11);
                     break;
             }
-
         }
     }
 

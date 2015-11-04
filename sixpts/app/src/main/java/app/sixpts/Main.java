@@ -93,7 +93,5 @@ public class Main extends AppCompatActivity {
         ArrayAdapter mapAdapter = ArrayAdapter.createFromResource(this, R.array.map_array, R.layout.lotspinner_layout);
         _lotSpinner.setAdapter(mapAdapter);
         _lotSpinner.setOnItemSelectedListener(new LotListener(_lotSpinner, _data, _currentLot));
-
-        _data.updateRating();
     }
 }

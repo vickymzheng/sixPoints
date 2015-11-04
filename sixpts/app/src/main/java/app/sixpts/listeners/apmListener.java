@@ -20,6 +20,8 @@ public class apmListener implements AdapterView.OnItemSelectedListener {
     public apmListener(Spinner spin, Data data) {
         _data = data;
         _spin = spin;
+        if(_data.getAmp() == 0) { _spin.setSelection(0); }
+        else { _spin.setSelection(1); }
     }
 
     /**

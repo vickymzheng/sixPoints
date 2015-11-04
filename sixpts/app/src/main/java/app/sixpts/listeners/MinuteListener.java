@@ -22,6 +22,8 @@ public class MinuteListener implements AdapterView.OnItemSelectedListener {
     public MinuteListener(Spinner spin, Data data) {
         _data = data;
         _spin = spin;
+        if(_data.getMinute() == 00) { _spin.setSelection(0); }
+        else { _spin.setSelection(1); }
     }
 
     /**

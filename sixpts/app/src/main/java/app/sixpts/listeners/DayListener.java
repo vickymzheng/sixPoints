@@ -16,8 +16,6 @@ public class DayListener implements AdapterView.OnItemSelectedListener {
     private Spinner _spin;
     private Data _data;
     private HashMap<String, Integer> _map;
-
-    public DayListener() {}
     /**
      * @param spin
      * @param data
@@ -26,6 +24,7 @@ public class DayListener implements AdapterView.OnItemSelectedListener {
         _data = data;
         _spin = spin;
         _map = new HashMap<String, Integer>();
+        _spin.setSelection(_data.getDay() - 1);
         for(int i = 1; i < 8; ++i) {
             switch(i) {
                 case 1:

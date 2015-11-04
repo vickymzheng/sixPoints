@@ -35,14 +35,17 @@ public class Data extends AppCompatActivity {
         _sugRateField = sugRateField;
         _curRateField = curRateField;
 
-        if ((_minute >= 15 && _minute < 30) || (_minute <= 59 && _minute > 30)) {
-            _minute = 30;
-        }
+        if ((_minute >= 15 && _minute <= 30) || (_minute <= 59 && _minute >= 30)) { _minute = 30; }
         else { _minute = 0; }
+        if (_amp == 1 || _hour == 12) { _hour = _hour - 12; }
     }
     public void updateRating() {
         //_sugLotField.setText(_selectedLot.split(" ")[0] + _selectedLot.split(" ")[1]);
         _sugLotField.setText(_month + " " + _day + " " + _hour + " " + _minute + " " + _amp);
+    }
+
+    private void setSpinners() {
+
     }
 
     /**
