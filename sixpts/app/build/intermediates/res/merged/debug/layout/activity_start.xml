@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".Start"
+    android:background="#2f2e2d">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleImage"
+        android:layout_above="@id/iconImage"
+        android:background="@drawable/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@id/iconImage"
+        android:background="@drawable/icon"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loadingImage"
+        android:background="@drawable/loading_animation"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/iconImage"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
+<!-- From: file:/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/src/main/res/layout/activity_start.xml -->

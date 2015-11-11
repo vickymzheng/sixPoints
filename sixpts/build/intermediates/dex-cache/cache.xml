@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/paulkowa/Desktop/sixPoints/sixpts/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/home/paulkowa/Desktop/sixPoints/sixpts/app/build/intermediates/pre-dexed/debug/classes-b03ffb9bd84f4a8a186af61ee1e09ae7cb9b6961.jar" />
+    </item>
+    <item
+        jar="/home/paulkowa/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/home/paulkowa/Desktop/sixPoints/sixpts/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-85c182e848345588454fd6ce390d3239bae33d35.jar" />
+    </item>
+    <item
+        jar="/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/build/intermediates/pre-dexed/debug/classes-144c7855f60c2d7eb71777068beb1a1836c13236.jar" />
+    </item>
+    <item
+        jar="/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/build/intermediates/pre-dexed/debug/classes-446d22bd7cef2edf2019ff312c87159c6425080c.jar" />
+    </item>
+    <item
+        jar="/home/paulkowa/Desktop/sixPoints/sixpts/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/home/paulkowa/Desktop/sixPoints/sixpts/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-48a5ba3e63abc5e73d56c82d402b84810a4c0e6e.jar" />
+    </item>
+    <item
+        jar="/home/paulkowa/Desktop/sixPoints/sixpts/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/home/paulkowa/Desktop/sixPoints/sixpts/app/build/intermediates/pre-dexed/debug/classes-eb43b5ee7640a1108e77b16e6a4e04f188e0c653.jar" />
+    </item>
+    <item
+        jar="/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-78e2207ae0a546d61825c4472280cb624289e5ce.jar" />
+    </item>
+
+</items>

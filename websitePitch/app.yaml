@@ -1,0 +1,29 @@
+application: sixhundredpoints
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /assets/css
+  static_dir: assets/css
+
+- url: /assets/js
+  static_dir: assets/js
+
+- url: /assets/fonts
+  static_dir: assets/fonts
+
+- url: /images
+  static_dir: images
+
+- url: /assets/sass
+  static_dir: assets/sass
+
+- url: /.*
+  script: main.app
+
+libraries:
+- name: jinja2
+  version: latest

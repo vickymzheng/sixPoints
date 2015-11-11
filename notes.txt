@@ -1,0 +1,28 @@
+Sync up with events calendar to see how it will affect available parking 
+Integrate GPS/map that would be able to show users where the nearest parking is
+Supply parking rules for different lots  
+Suggested best lot 
+
+Check in and check out features, and having timers of how long they'll be there
+	Example: I have class for 4 hours, so I'll set my timer for 4 hours so other users can see when my spot will be available 
+Some kind of reporting/submission to be able to record data for real time updates
+	***Have realistic, reasonable mock data just incase***
+Have preferences for where they would want to park
+Be able to return a prediction for what time they should try to get to the parking lot for a spot
+
+
+Tasks: 
+
+###########STUFF TO DO################
+
+-learn to find closet lot to GPS location on phone
+-maria db open source sql
+-learn how to host data on a web server for stats on app
+-app icon 
+
+-PUSH DATA!!!!
+
+-google maps api for android
+-learn to code into and from a JSON
+-some way to suggust a lot 
+-rating of lots
