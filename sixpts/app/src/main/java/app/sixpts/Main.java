@@ -1,18 +1,19 @@
 package app.sixpts;
 
+import android.app.UiAutomation;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import app.sixpts.listeners.ArrivingListener;
 import app.sixpts.listeners.DayListener;
 import app.sixpts.listeners.HourListener;
-import app.sixpts.listeners.LeavingListener;
 import app.sixpts.listeners.LotListener;
 import app.sixpts.listeners.MinuteListener;
 import app.sixpts.listeners.MonthListener;
@@ -72,8 +73,21 @@ public class Main extends AppCompatActivity {
         _leaving = (Button) findViewById(R.id.leaving);
         _data = new Data(_suggestedLot, _suggestedRating, _currentRating);
 
-        _arriving.setOnClickListener(new ArrivingListener(_data));
-        _leaving.setOnClickListener(new LeavingListener(_data));
+        _arriving.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent arrive = new Intent("app.sixpts.Arriving");
+                startActivity(arrive);
+            }
+        });
+
+        _leaving.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent leave = new Intent("app.sixpts.Leaving");
+                startActivity(leave);
+            }
+        });
 
         _monthSpinner = (Spinner) findViewById(R.id.monthSpinner);
         ArrayAdapter monthAdapter = ArrayAdapter.createFromResource(this, R.array.month_array, R.layout.monthspinner_layout);
