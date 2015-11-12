@@ -296,7 +296,7 @@
     <string name="mapDescript">Map of UB North</string>
     <string name="prefs">Settings</string>
     <string name="ratehint">Rating of lot availability</string>
-    <string name="rating">% Full:</string>
+    <string name="rating">Full:</string>
     <string name="site">sixhundredproints.appspot.com</string>
     <string name="spinner_titleThen">Parking Lots</string>
     <!-- From: file:/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->

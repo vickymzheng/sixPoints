@@ -1,6 +1,5 @@
 package app.sixpts;
 
-import android.app.UiAutomation;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,7 +38,6 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setUp();
-        _currentRating.setText("100");
     }
 
     @Override
@@ -71,7 +69,7 @@ public class Main extends AppCompatActivity {
         _suggestedRating = (EditText) findViewById(R.id.rateValueText);
         _arriving = (Button) findViewById(R.id.arriving);
         _leaving = (Button) findViewById(R.id.leaving);
-        _data = new Data(_suggestedLot, _suggestedRating, _currentRating);
+        _data = new Data(_suggestedLot, _suggestedRating, _currentRating, getApplicationContext());
 
         _arriving.setOnClickListener(new View.OnClickListener() {
             @Override

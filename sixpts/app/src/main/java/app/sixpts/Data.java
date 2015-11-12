@@ -1,39 +1,48 @@
 package app.sixpts;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.AssetManager;
 import android.widget.EditText;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Calendar;
+import java.util.Map;
 
 
 /**
  * Created by paulkowa on 11/3/15.
  */
-public class Data extends AppCompatActivity {
-    private String _selectedLot, _suggestedLot;
+public class Data extends Activity {
+    private String _selectedLot;
     private int _month, _day, _hour, _minute, _amp;
     private EditText _sugLotField, _sugRateField, _curRateField;
-    private Scanner _scan;
-    private HashMap<String, String> _map;
+    private HashMap<String, HashMap<String, Integer>> _map;
+    private AssetManager _assMan;
+    private String[] _files;
 
 
     /**
      *
      */
-    public Data(EditText sugLotField, EditText sugRateField, EditText curRateField) {
+    public Data(EditText sugLotField, EditText sugRateField, EditText curRateField, Context context) {
+        _map = new HashMap<String, HashMap<String, Integer>>();
+        _assMan = context.getAssets();
+        buildData();
+
+        _selectedLot = "Jarvis A";
+        _sugLotField = sugLotField;
+        _sugRateField = sugRateField;
+        _curRateField = curRateField;
+
         Calendar c = Calendar.getInstance();
         _hour = c.get(Calendar.HOUR_OF_DAY);
         _minute = c.get(Calendar.MINUTE);
         _amp = c.get(Calendar.AM_PM);
         _month = c.get(Calendar.MONTH);
         _day = c.get(Calendar.DAY_OF_WEEK);
-        _selectedLot = "Jarvis A";
-        _sugLotField = sugLotField;
-        _sugRateField = sugRateField;
-        _curRateField = curRateField;
 
         if ((_minute >= 15 && _minute <= 30) || (_minute <= 45 && _minute >= 30)) { _minute = 30; }
         else if(_minute > 45 && _minute < 60) {
@@ -43,25 +52,87 @@ public class Data extends AppCompatActivity {
         else { _minute = 0; }
         if (_amp == 1 || _hour == 12) { _hour = _hour - 12; }
     }
+
     public void updateRating() {
-        //_sugLotField.setText(_selectedLot.split(" ")[0] + _selectedLot.split(" ")[1]);
-        _sugLotField.setText(_month + " " + _day + " " + _hour + " " + _minute + " " + _amp);
-    }
+        String suggestion = "";
+        int sugRat = 0;
+        int curRat = 0;
 
-    private void setSpinners() {
-
-    }
-
-    /**
-    public void updateLot() throws IOException {
-        _scan = new Scanner(getAssets().open(_selectedLot + ".txt"));
-        while (_scan.hasNext()) {
-            String[] line = _scan.nextLine().split("\t");
-            _map.put(hash(line[0], line[1], line[2], line[3], null), line[4]);
+        /**
+         *Using _sugRateField and _sugLotField to display values for testing
+         */
+        String[] selected = _selectedLot.split(" ");
+        try {
+            _sugRateField.setText(String.valueOf(_assMan.list("files").length));
+            _sugLotField.setText(String.valueOf(_assMan.list("files")[1]));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        updateRating();
+
+        /**
+         * Error occurs in either buildData or findBest
+         */
+        //_curRateField.setText(_map.get(selected[0] + selected[1]).get("011200"));
+
+        //findBest(suggestion, sugRat, curRat);
+
+        //_sugLotField.setText(_selectedLot.split(" ")[0] + _selectedLot.split(" ")[1]);
+        //_sugLotField.setText(_month + " " + _day + " " + _hour + " " + _minute + " " + _amp);
+        //_sugLotField.setText(_selectedLot.split(" ")[0] + _selectedLot.split(" ")[1]);
+        //_sugLotField.setText(suggestion);
+        //_sugRateField.setText(String.valueOf(sugRat));
+        //_curRateField.setText(String.valueOf(curRat));
+
+        //_curRateField.setText(_map.get(_selectedLot).get("011200"));
     }
-    **/
+
+    public void buildData() {
+
+        try {
+            _files = _assMan.list("files");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        for(int i = 0; i < _files.length; ++i) {
+            Scanner scan;
+            HashMap<String, Integer> hash;
+            try {
+                scan = new Scanner(_assMan.open(_files[i]));
+                hash = new HashMap<String, Integer>();
+
+                while (scan.hasNext()) {
+                    String[] current = scan.nextLine().split(" ");
+                    hash.put(current[0], Integer.valueOf(current[1]));
+                }
+                _map.put(_files[i].split(".")[0], hash);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void findBest(String sugLot, int sugRat, int curRat) {
+        String[] selected = _selectedLot.split(" ");
+
+        if (selected.length == 2) {
+            curRat = _map.get(selected[0] + selected[1]).get(String.valueOf(_month) + String.valueOf(_day) + String.valueOf(_hour) + String.valueOf(_minute) + String.valueOf(_amp));
+            sugRat = _map.get(selected[0] + selected[1]).get(String.valueOf(_month) + String.valueOf(_day) + String.valueOf(_hour) + String.valueOf(_minute) + String.valueOf(_amp));
+        }
+        else {
+            curRat = _map.get(_selectedLot).get(String.valueOf(_month) + String.valueOf(_day) + String.valueOf(_hour) + String.valueOf(_minute) + String.valueOf(_amp));
+            sugRat = _map.get(_selectedLot).get(String.valueOf(_month) + String.valueOf(_day) + String.valueOf(_hour) + String.valueOf(_minute) + String.valueOf(_amp));
+        }
+
+        sugLot = _selectedLot;
+
+        for (Map.Entry<String, HashMap<String, Integer>> entry : _map.entrySet()) {
+            if(entry.getValue().get(String.valueOf(_month) + String.valueOf(_day) + String.valueOf(_hour) + String.valueOf(_minute) + String.valueOf(_amp)) < sugRat) {
+                sugRat = entry.getValue().get(String.valueOf(_month) + String.valueOf(_day) + String.valueOf(_hour) + String.valueOf(_minute) + String.valueOf(_amp));
+                sugLot = entry.getKey();
+            }
+        }
+    }
 
     /**
      *
@@ -142,12 +213,6 @@ public class Data extends AppCompatActivity {
     public String getSelectedLot() {
         return _selectedLot;
     }
-
-    /**
-     *
-     * @return suggested lot
-     */
-    public String getSuggestedLot() { return _suggestedLot; }
 
     /**
      *

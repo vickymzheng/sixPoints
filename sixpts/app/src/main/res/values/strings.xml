@@ -8,7 +8,7 @@
     <string name="site">sixhundredproints.appspot.com</string>
     <string name="curLot">Lot:</string>
     <string name="sug">Best:</string>
-    <string name="rating">% Full:</string>
+    <string name="rating">Full:</string>
     <string name="ratehint">Rating of lot availability</string>
     <string name="lothint">Lot you selected</string>
     <string name="besthint">Suggest lot to park in</string>
