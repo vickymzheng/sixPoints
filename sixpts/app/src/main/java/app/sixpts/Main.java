@@ -6,32 +6,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
 
-import app.sixpts.listeners.DayListener;
-import app.sixpts.listeners.HourListener;
-import app.sixpts.listeners.LotListener;
-import app.sixpts.listeners.MinuteListener;
-import app.sixpts.listeners.MonthListener;
-import app.sixpts.listeners.apmListener;
+
+
 
 public class Main extends AppCompatActivity {
-    Spinner _lotSpinner;
-    Spinner _daySpinner;
-    Spinner _hourSpinner;
-    Spinner _minuteSpinner;
-    Spinner _apmSpinner;
-    Spinner _monthSpinner;
     Button _arriving;
     Button _leaving;
-    EditText _currentLot;
-    EditText _currentRating;
-    EditText _suggestedLot;
-    EditText _suggestedRating;
-    Data _data;
+    Button _checkAvail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,13 +46,16 @@ public class Main extends AppCompatActivity {
     }
 
     private void setUp() {
-        _currentLot = (EditText) findViewById(R.id.curLotValueText);
-        _currentRating = (EditText) findViewById(R.id.ratingValueText);
-        _suggestedLot = (EditText) findViewById(R.id.sugLotValueText);
-        _suggestedRating = (EditText) findViewById(R.id.rateValueText);
+        //_currentLot = (EditText) findViewById(R.id.curLotValueText);
+        //_currentRating = (EditText) findViewById(R.id.ratingValueText);
+        //_suggestedLot = (EditText) findViewById(R.id.sugLotValueText);
+        //_suggestedRating = (EditText) findViewById(R.id.rateValueText);
         _arriving = (Button) findViewById(R.id.arriving);
         _leaving = (Button) findViewById(R.id.leaving);
-        _data = new Data(_suggestedLot, _suggestedRating, _currentRating, getApplicationContext());
+        _checkAvail = (Button) findViewById(R.id.checkAvail);
+
+
+        //_data = new Data(_suggestedLot, _suggestedRating, _currentRating, getApplicationContext());
 
         _arriving.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,20 +73,39 @@ public class Main extends AppCompatActivity {
             }
         });
 
+        _checkAvail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent checkAvail = new Intent("app.sixpts.CheckAvail");
+                startActivity(checkAvail);
+            }
+        });
+
+/**
+        _leaving.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HttpGet httpGet = new HttpGet(Main.this, _suggestedLot, _leaving);
+                httpGet.execute();
+                _leaving.setEnabled(false);
+            }
+        });
+**/
+/**
         _monthSpinner = (Spinner) findViewById(R.id.monthSpinner);
         ArrayAdapter monthAdapter = ArrayAdapter.createFromResource(this, R.array.month_array, R.layout.monthspinner_layout);
         _monthSpinner.setAdapter(monthAdapter);
-        _monthSpinner.setOnItemSelectedListener(new MonthListener(_monthSpinner, _data));
+       _monthSpinner.setOnItemSelectedListener(new MonthListener(_monthSpinner, _data));
 
         _daySpinner = (Spinner) findViewById(R.id.daySpinner);
         ArrayAdapter dayAdapter = ArrayAdapter.createFromResource(this, R.array.day_array, R.layout.dayspinner_layout);
         _daySpinner.setAdapter(dayAdapter);
-        _daySpinner.setOnItemSelectedListener(new DayListener(_daySpinner, _data));
+       _daySpinner.setOnItemSelectedListener(new DayListener(_daySpinner, _data));
 
         _hourSpinner = (Spinner) findViewById(R.id.hourSpinner);
         ArrayAdapter hourAdapter = ArrayAdapter.createFromResource(this, R.array.hour_array, R.layout.hourspinner_layout);
         _hourSpinner.setAdapter(hourAdapter);
-        _hourSpinner.setOnItemSelectedListener(new HourListener(_hourSpinner, _data));
+       _hourSpinner.setOnItemSelectedListener(new HourListener(_hourSpinner, _data));
 
         _minuteSpinner = (Spinner) findViewById(R.id.minuteSpinner);
         ArrayAdapter minuteAdapter = ArrayAdapter.createFromResource(this, R.array.minute_array, R.layout.minutespinner_layout);
@@ -116,5 +121,6 @@ public class Main extends AppCompatActivity {
         ArrayAdapter mapAdapter = ArrayAdapter.createFromResource(this, R.array.map_array, R.layout.lotspinner_layout);
         _lotSpinner.setAdapter(mapAdapter);
         _lotSpinner.setOnItemSelectedListener(new LotListener(_lotSpinner, _data, _currentLot));
+ **/
     }
 }

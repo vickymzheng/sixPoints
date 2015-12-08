@@ -18,7 +18,6 @@ import java.util.Map;
 public class Data extends Activity {
     private String _selectedLot;
     private int _month, _day, _hour, _minute, _amp;
-    private EditText _sugLotField, _sugRateField, _curRateField;
     private HashMap<String, HashMap<String, Integer>> _map;
     private AssetManager _assMan;
     private String[] _files;
@@ -31,11 +30,6 @@ public class Data extends Activity {
         _map = new HashMap<String, HashMap<String, Integer>>();
         _assMan = context.getAssets();
         buildData();
-
-        _selectedLot = "Jarvis A";
-        _sugLotField = sugLotField;
-        _sugRateField = sugRateField;
-        _curRateField = curRateField;
 
         Calendar c = Calendar.getInstance();
         _hour = c.get(Calendar.HOUR_OF_DAY);
@@ -61,6 +55,8 @@ public class Data extends Activity {
         /**
          *Using _sugRateField and _sugLotField to display values for testing
          */
+
+        /**
         String[] selected = _selectedLot.split(" ");
         try {
             _sugRateField.setText(String.valueOf(_assMan.list("files").length));
@@ -194,18 +190,6 @@ public class Data extends Activity {
         //_sugLotField.setText(_month + _day + _hour + _minute + _amp);
     }
 
-    public void set_sugLotField(EditText lotField) {
-        _sugLotField = lotField;
-    }
-
-    public void set_curRateField(EditText lotField) {
-        _curRateField = lotField;
-    }
-
-    public void set_sugRateField(EditText lotField) {
-        _sugRateField = lotField;
-    }
-
     /**
      *
      * @return selected lot
@@ -247,4 +231,6 @@ public class Data extends Activity {
      * @return amp
      */
     public int getAmp() { return _amp; }
+
+
 }

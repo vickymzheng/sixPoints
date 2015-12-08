@@ -29,7 +29,7 @@ public class Start extends AppCompatActivity {
                 startActivity(main);
                 finish();
             }
-        }, 6000);
+        }, 1500);
     }
 
     @Override
