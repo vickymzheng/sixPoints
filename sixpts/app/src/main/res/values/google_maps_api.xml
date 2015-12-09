@@ -1,0 +1,10 @@
+/*shuaixiang zhang
+* This is a the google map api key registor.
+*/
+
+<resources>
+   
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
+        AIzaSyAFg8kxFugJTk0sLA4XpJLICwyoL3_LVJg
+    </string>
+</resources>
