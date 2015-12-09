@@ -4,8 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import app.sixpts.listeners.DayListener;
 import app.sixpts.listeners.HourListener;
@@ -15,19 +21,24 @@ import app.sixpts.listeners.MonthListener;
 import app.sixpts.listeners.apmListener;
 
 public class CheckAvail extends AppCompatActivity {
-    Spinner _monthSpinner;
-    Spinner _daySpinner;
-    Spinner _hourSpinner;
-    Spinner _minuteSpinner;
-    Spinner _apmSpinner;
-    Spinner _lotSpinner;
+    Spinner _monthSpinner, _daySpinner, _hourSpinner,
+            _minuteSpinner, _apmSpinner, _lotSpinner;
+    TextView _bestLot, _selectedLot;
+    ProgressBar _selectedBar, _suggestedBar;
     Data _data;
+    Button _rating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_avail);
-        _data = new Data(null, null, null, getApplicationContext());
+        _bestLot = (TextView) findViewById(R.id.lotText);
+        _selectedLot = (TextView) findViewById(R.id.selectedText);
+        _lotSpinner = (Spinner) findViewById(R.id.mapSpinner);
+        _rating = (Button) findViewById(R.id.rateButton);
+        _selectedBar = (ProgressBar) findViewById(R.id.currentLotBar);
+        _suggestedBar = (ProgressBar) findViewById(R.id.suggestedLotBar);
+        _data = new Data( _rating, _bestLot, _selectedLot, _selectedBar, _suggestedBar, _lotSpinner, CheckAvail.this);
         setUp();
     }
 
@@ -54,6 +65,16 @@ public class CheckAvail extends AppCompatActivity {
     }
 
     public void setUp() {
+
+        _rating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _data.getSelectedView().setText(_data.getSelectedLot());
+                _data.getRankings().execute();
+
+            }
+        });
+
         _monthSpinner = (Spinner) findViewById(R.id.monthSpinner);
         ArrayAdapter monthAdapter = ArrayAdapter.createFromResource(this, R.array.month_array, R.layout.monthspinner_layout);
         _monthSpinner.setAdapter(monthAdapter);

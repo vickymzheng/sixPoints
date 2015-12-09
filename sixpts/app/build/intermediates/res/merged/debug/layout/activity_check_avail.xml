@@ -7,16 +7,6 @@
     tools:context="app.sixpts.CheckAvail"
     android:background="#2f2e2d">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/titleText"
-        android:text="@string/selectALot"
-        android:textSize="20sp"
-        android:textColor="#fffa00"
-        android:editable="false"
-        android:textStyle="bold" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -24,7 +14,7 @@
         android:id="@+id/mapSpinner"
         android:spinnerMode="dropdown"
         android:background="#2f2e2d"
-        android:layout_below="@id/titleText"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="15dp">
     </Spinner>
 
@@ -88,6 +78,18 @@
 
     </LinearLayout>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rateButton"
+        android:layout_below="@id/dateLayout"
+        android:layout_marginTop="10dp"
+        android:text="@string/getRating"
+        android:background="#222120"
+        android:textColor="#fffa00"
+        android:textSize="18sp"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -95,7 +97,7 @@
         android:text="@string/chosenLot"
         android:textSize="20sp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/dateLayout"
+        android:layout_below="@id/rateButton"
         android:layout_marginTop="10dp"
         android:textColor="#fffa00"
         android:editable="false"
@@ -222,8 +224,8 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/suggestBarLayout"
-        android:layout_marginTop="25dp"
+        android:layout_above="@id/siteText"
+        android:layout_marginBottom="10dp"
         android:id="@id/iconImage"
         android:background="@drawable/icon"
         android:layout_centerVertical="true"

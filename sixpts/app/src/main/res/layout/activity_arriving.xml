@@ -18,42 +18,33 @@
         android:textColor="#fffa00"
         android:editable="false"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/testButton"
+            android:layout_marginTop="10dp"
+            android:text="TEST BUTTON"
+            android:background="#222120"
+            android:textColor="#fffa00"
+            android:textSize="18sp"
+            />
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@id/siteText"
+        android:layout_below="@id/testButton"
+        android:layout_marginTop="15dp"
         android:orientation="vertical"
-        android:weightSum="10">
+        android:background="#222120">
 
-        <ListView
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:id="@+id/availableList"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="5"
-            android:id="@+id/MapScrollView"
-            android:clickable="true"
-            android:layout_alignParentBottom="true">
-
-            <ScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:id="@+id/imageView"
-                    android:background="@drawable/map"
-                    android:contentDescription="@string/mapDescript" />
-            </ScrollView>
-        </HorizontalScrollView>
+            android:layout_gravity="center_horizontal"
+            android:text="@string/Test"
+            android:background="#222120"
+            android:textColor="#fffa00"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:id="@+id/TEST" />
     </LinearLayout>
 </RelativeLayout>

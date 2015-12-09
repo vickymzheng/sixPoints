@@ -53,7 +53,7 @@ public class HttpPush extends AsyncTask<Void, Integer, String> {
 
     @Override
     protected void onPostExecute(String result){
-        Toast.makeText(context, result, Toast.LENGTH_LONG);
+        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         button.setEnabled(true);
         progressDialog.hide();
     }

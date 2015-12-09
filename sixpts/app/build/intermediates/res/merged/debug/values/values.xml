@@ -271,6 +271,7 @@
     <!-- From: file:/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="Leaving">Leaving</string>
+    <string name="Test">test results...</string>
     <!-- From: file:/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
@@ -300,6 +301,7 @@
     <string name="chosenLot">Selected Lot</string>
     <string name="curLot">Lot:</string>
     <string name="fullness">% Full</string>
+    <string name="getRating">Get Rating</string>
     <string name="hello_world">Hello world!</string>
     <string name="lothint">Lot you selected</string>
     <string name="mapDescript">Map of UB North</string>

@@ -53,7 +53,7 @@ public class HttpGet extends AsyncTask<Void, Integer, String> {
 
     @Override
     protected void onPostExecute(String result){
-        Toast.makeText(context, result,Toast.LENGTH_LONG).show();
+        Toast.makeText(context, result,Toast.LENGTH_SHORT).show();
         button.setEnabled(true);
         progressDialog.hide();
     }

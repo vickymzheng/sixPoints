@@ -32,8 +32,6 @@ public class LotListener implements AdapterView.OnItemSelectedListener {
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         _data.setLot((String) _spin.getSelectedItem());
-        _data.updateRating();
-
     }
 
     /**

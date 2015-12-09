@@ -99,4 +99,6 @@
     <string name="arriving">Arriving</string>
     <string name="selectALot">Pick a Lot</string>
     <string name="chosenLot">Selected Lot</string>
+    <string name="getRating">Get Rating</string>
+    <string name="Test">test results...</string>
 </resources>
