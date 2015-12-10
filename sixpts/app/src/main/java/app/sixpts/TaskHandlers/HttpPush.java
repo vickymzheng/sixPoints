@@ -14,6 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import app.sixpts.Data;
 import app.sixpts.Leaving;
 import app.sixpts.CustomObjects.HttpResult;
 
@@ -27,12 +28,14 @@ public class HttpPush extends AsyncTask<Void, Integer, String> {
     Activity leavingActivity;
     Leaving leaving;
     HttpResult result;
+    Data data;
 
-    public HttpPush(Context context, Activity leavingActivity, Leaving leaving, Button button) {
+    public HttpPush(Context context, Activity leavingActivity, Leaving leaving, Data data, Button button) {
         this.context = context;
         this.button = button;
         this.leavingActivity = leavingActivity;
         this.leaving = leaving;
+        this.data = data;
         result = new HttpResult();
     }
 
@@ -77,7 +80,7 @@ public class HttpPush extends AsyncTask<Void, Integer, String> {
 
     @Override
     protected void onPreExecute() {
-        httpUrl = "http://sharingreligion.com/sixpoints/writeServer.php?lots=davis&type=in";
+        httpUrl = "http://sharingreligion.com/sixpoints/writeServer.php?lot=" + fixLotName(data.getSelectedLot()) + "&type=in";
         super.onPreExecute();
 
     }
@@ -90,5 +93,13 @@ public class HttpPush extends AsyncTask<Void, Integer, String> {
 
     @Override
     protected void onProgressUpdate(Integer... values) {
+    }
+
+    private String fixLotName(String lot) {
+        if (lot.contains(" ")) {
+            String[] name = lot.split(" ");
+            return name[0] + name[1];
+        }
+        return lot;
     }
 }

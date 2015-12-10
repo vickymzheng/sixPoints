@@ -60,7 +60,7 @@ public class Leaving extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkoutButton.setEnabled(false);
-                HttpPush httpPush = new HttpPush(Leaving.this, Leaving.this, Leaving.this, checkoutButton);
+                HttpPush httpPush = new HttpPush(Leaving.this, Leaving.this, Leaving.this, data, checkoutButton);
                 httpPush.execute();
             }
         });

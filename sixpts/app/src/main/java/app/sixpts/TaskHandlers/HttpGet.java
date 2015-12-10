@@ -15,6 +15,7 @@ import java.net.URL;
 
 import app.sixpts.Arriving;
 import app.sixpts.CustomObjects.HttpResult;
+import app.sixpts.Data;
 
 /**
  * Created by paulkowa on 12/6/15.
@@ -26,12 +27,14 @@ public class HttpGet extends AsyncTask<Void, Integer, String> {
     Activity arrivingActivity;
     Arriving arriving;
     HttpResult result;
+    Data data;
 
-    public HttpGet(Context context, Activity arrivingActivity, Arriving arriving, Button button) {
+    public HttpGet(Context context, Activity arrivingActivity, Arriving arriving, Data data, Button button) {
         this.context = context;
         this.button = button;
         this.arrivingActivity = arrivingActivity;
         this.arriving = arriving;
+        this.data = data;
         result = new HttpResult();
     }
 
@@ -66,7 +69,7 @@ public class HttpGet extends AsyncTask<Void, Integer, String> {
 
     @Override
     protected void onPreExecute() {
-        httpUrl = "http://sharingreligion.com/sixpoints/readServer.php?lots=davis&type=in";
+        httpUrl = "http://sharingreligion.com/sixpoints/readServer.php?lot=" +  fixLotName(data.getSelectedLot()) + "&type=in";
         super.onPreExecute();
 
     }
@@ -87,5 +90,13 @@ public class HttpGet extends AsyncTask<Void, Integer, String> {
 
     @Override
     protected void onProgressUpdate(Integer... values) {
+    }
+
+    private String fixLotName(String lot) {
+        if (lot.contains(" ")) {
+            String[] name = lot.split(" ");
+            return name[0] + name[1];
+        }
+        return lot;
     }
 }

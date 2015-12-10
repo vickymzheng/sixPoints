@@ -62,7 +62,7 @@ public class Arriving extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arriveButton.setEnabled(false);
-                HttpGet httpGet = new HttpGet(Arriving.this, Arriving.this, Arriving.this, arriveButton);
+                HttpGet httpGet = new HttpGet(Arriving.this, Arriving.this, Arriving.this, data, arriveButton);
                 httpGet.execute();
             }
         });
