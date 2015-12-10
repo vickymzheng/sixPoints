@@ -105,22 +105,21 @@ public class SetRankings extends AsyncTask<Void, Integer, String> {
         while(lotIter.hasNext()) {
             String current = lotIter.next().toString();
             int value = data.getMap().get(current).get(String.valueOf(data.getMonth()) + String.valueOf(data.getDay()) + String.valueOf(data.getHour()) + String.valueOf(data.getMinute()) + String.valueOf(data.getAmp()));
-            if(value < stats.getSuggestedLotValue())
+            if(value < stats.getSuggestedLotValue()) {
                 stats.setSuggestedLotValue(value);
                 stats.setSuggestedLot(current);
-            /**
-            Set dates = data.getMap().get(current).keySet();
-            Iterator dateIter = dates.iterator();
-
-            // Iterate through key values in lot lists
-
-            while (dateIter.hasNext()) {
-                String time = dateIter.next().toString();
-                if (data.getMap().get(current).get(time) < stats.getSuggestedLotValue()) {
-                    stats.setSuggestedLotValue(data.getMap().get(current).get(time));
-                    stats.setSuggestedLot(current);
-                }
             }
+            /**
+             Set dates = data.getMap().get(current).keySet();
+             Iterator dateIter = dates.iterator();
+             // Iterate through key values in lot lists
+             while (dateIter.hasNext()) {
+             String time = dateIter.next().toString();
+             if (data.getMap().get(current).get(time) < stats.getSuggestedLotValue()) {
+             stats.setSuggestedLotValue(data.getMap().get(current).get(time));
+             stats.setSuggestedLot(current);
+             }
+             }
              **/
         }
         return stats;

@@ -1,52 +1,83 @@
 package app.sixpts.TaskHandlers;
 
-import android.app.ProgressDialog;
+import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import app.sixpts.Leaving;
+import app.sixpts.CustomObjects.HttpResult;
 
 /**
  * Created by paulkowa on 12/6/15.
  */
 public class HttpPush extends AsyncTask<Void, Integer, String> {
     Context context;
-    TextView textView;
+    String httpUrl, JSON_STRING;
     Button button;
-    ProgressDialog progressDialog;
+    Activity leavingActivity;
+    Leaving leaving;
+    HttpResult result;
 
-    public HttpPush(Context context, TextView textView, Button button) {
+    public HttpPush(Context context, Activity leavingActivity, Leaving leaving, Button button) {
         this.context = context;
-        this.textView = textView;
         this.button = button;
+        this.leavingActivity = leavingActivity;
+        this.leaving = leaving;
+        result = new HttpResult();
     }
 
     @Override
     protected String doInBackground(Void... params) {
         int i = 0;
-        synchronized (this) {
-            while (i < 10) {
-                try {
-                    wait(1500);
-                    i++;
-                    publishProgress(i);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        try {
+            URL url = new URL(httpUrl);
+            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+            /**
+            httpURLConnection.setRequestMethod("POST");
+            httpURLConnection.setDoOutput(true);
+            httpURLConnection.setRequestProperty("Content-Type",
+                    "application/x-www-form-urlencoded");
+
+            httpURLConnection.setFixedLengthStreamingMode(10000);
+            PrintWriter out = new PrintWriter(httpURLConnection.getOutputStream());
+            out.print("0");
+            out.close();
+            **/
+            InputStream inputStream = httpURLConnection.getInputStream();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder stringBuilder = new StringBuilder();
+            while ((JSON_STRING = bufferedReader.readLine()) != null) {
+                stringBuilder.append(JSON_STRING + "\n");
             }
+
+            bufferedReader.close();
+            inputStream.close();
+            httpURLConnection.disconnect();
+
+            return "Checkout Complete";
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return "Download complete...";
+
+        return "Connection Failed...";
     }
 
     @Override
     protected void onPreExecute() {
-        progressDialog = new ProgressDialog(context);
-        progressDialog.setTitle("Download in Progress...");
-        progressDialog.setMax(10);
-        progressDialog.setProgress(0);
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        progressDialog.show();
+        httpUrl = "http://sharingreligion.com/sixpoints/writeServer.php?lots=davis&type=in";
         super.onPreExecute();
 
     }
@@ -54,14 +85,10 @@ public class HttpPush extends AsyncTask<Void, Integer, String> {
     @Override
     protected void onPostExecute(String result){
         Toast.makeText(context, result, Toast.LENGTH_LONG).show();
-        button.setEnabled(true);
-        progressDialog.hide();
+        //button.setEnabled(true);
     }
 
     @Override
     protected void onProgressUpdate(Integer... values) {
-        int progress = values[0];
-        progressDialog.setProgress(progress);
-        //textView.setText("Download in Progress...");
     }
 }

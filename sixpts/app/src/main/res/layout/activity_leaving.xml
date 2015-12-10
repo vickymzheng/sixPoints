@@ -10,32 +10,122 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/selectLocal"
+        android:text="@string/whereAreYouLeaving"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textColor="#fffa00"
+        android:editable="false"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/mapSpinner"
+        android:spinnerMode="dropdown"
+        android:background="#2f2e2d"
+        android:layout_below="@id/selectLocal"
+        android:layout_marginTop="15dp">
+    </Spinner>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:id="@+id/dateLayout"
+        android:layout_below="@id/mapSpinner">
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:id="@+id/hourSpinner"
+            android:spinnerMode="dropdown"
+            android:background="#282726"
+            android:layout_marginBottom="38dp">
+        </Spinner>
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:id="@+id/minuteSpinner"
+            android:spinnerMode="dropdown"
+            android:background="#282726"
+            android:layout_marginBottom="38dp">
+        </Spinner>
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="1.3"
+            android:layout_height="40dp"
+            android:id="@+id/apmSpinner"
+            android:spinnerMode="dropdown"
+            android:background="#282726"
+            android:layout_marginBottom="38dp">
+        </Spinner>
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="3.5"
+            android:layout_height="40dp"
+            android:id="@+id/daySpinner"
+            android:spinnerMode="dropdown"
+            android:background="#282726"
+            android:layout_marginBottom="38dp">
+        </Spinner>
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_weight="3.2"
+            android:layout_height="40dp"
+            android:id="@+id/monthSpinner"
+            android:spinnerMode="dropdown"
+            android:background="#282726"
+            android:layout_marginBottom="38dp">
+        </Spinner>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/outButton"
+        android:layout_below="@id/dateLayout"
+        android:layout_marginTop="20dp"
+        android:text="@string/checkout"
+        android:background="#222120"
+        android:textColor="#fffa00"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:id="@+id/siteText"
         android:text="@string/site"
         android:textSize="12sp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:textColor="#fffa00"
         android:editable="false"/>
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/outButton"
         android:layout_above="@id/siteText"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical"
         android:weightSum="10">
 
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:id="@+id/availableList"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="5"
             android:id="@+id/MapScrollView"
             android:clickable="true"
@@ -43,11 +133,11 @@
 
             <ScrollView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1">
 
                 <ImageView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:id="@+id/imageView"

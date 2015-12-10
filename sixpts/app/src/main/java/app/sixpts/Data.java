@@ -26,6 +26,10 @@ public class Data extends Activity {
     private Spinner selectedLotSpinner;
     private Tuple tuple;
 
+    public Data() {
+        setTime();
+    }
+
     public Data(TextView suggestedLot, TextView selectedLot, ProgressBar selectedBar, ProgressBar suggestedBar, Spinner selectedLotSpinner, Context context) {
         // Set class variables
         this.context = context;
@@ -35,6 +39,11 @@ public class Data extends Activity {
         this.selectedLot = selectedLot;
         this.selectedLotSpinner = selectedLotSpinner;
 
+        setTime();
+
+    }
+
+    private void setTime() {
         // Set spinner values to current day / time
         Calendar c = Calendar.getInstance();
         _hour = c.get(Calendar.HOUR_OF_DAY);

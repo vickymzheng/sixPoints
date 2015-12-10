@@ -20,6 +20,9 @@ import app.sixpts.listeners.MinuteListener;
 import app.sixpts.listeners.MonthListener;
 import app.sixpts.listeners.apmListener;
 
+/**
+ * Created by paulkowa on 12/6/15.
+ */
 public class CheckAvail extends AppCompatActivity {
     Spinner _monthSpinner, _daySpinner, _hourSpinner,
             _minuteSpinner, _apmSpinner, _lotSpinner;

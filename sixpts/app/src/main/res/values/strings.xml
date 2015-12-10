@@ -4,7 +4,7 @@
     <string name="action_settings">Settings</string>
     <string name="spinner_titleThen">Parking Lots</string>
     <string name="prefs">Settings</string>
-    <string name="site">sixhundredproints.appspot.com</string>
+    <string name="site">sixhundredpoints.appspot.com</string>
     <string name="curLot">Lot:</string>
     <string name="sug">Best:</string>
     <string name="rating">Full:</string>
@@ -97,8 +97,11 @@
     <string name="title_activity_check_availability">CheckAvailability</string>
     <string name="Leaving">Leaving</string>
     <string name="arriving">Arriving</string>
-    <string name="selectALot">Pick a Lot</string>
+    <string name="selectALot">Select a Lot</string>
     <string name="chosenLot">Selected Lot</string>
     <string name="getRating">Get Rating</string>
     <string name="Test">test results...</string>
+    <string name="recent">Recent Openings</string>
+    <string name="whereAreYouLeaving">Where are you leaving?</string>
+    <string name="checkout">Checkout</string>
 </resources>

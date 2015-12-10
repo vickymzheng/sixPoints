@@ -117,31 +117,31 @@
             android:id="@+id/currentLotBar"
             android:max="100"
             android:progressTint="#fffa00"
-            android:progress="50"/>
+            android:progress="0"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/selectedLotProgressText"
-            android:text="50"
-            android:textSize="20sp"
-            android:textColor="#2f2e2d"
-            android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/selectedLotProgressText"
+                android:text="0"
+                android:textSize="20sp"
+                android:textColor="#2f2e2d"
+                android:textStyle="bold"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="#00000000"
-            android:text="@string/fullness"
-            android:textSize="20sp"
-            android:textColor="#2f2e2d"
-            android:textStyle="bold"
-            android:editable="false" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:text="@string/fullness"
+                android:textSize="20sp"
+                android:textColor="#2f2e2d"
+                android:textStyle="bold"
+                android:editable="false" />
         </LinearLayout>
     </FrameLayout>
 
@@ -191,7 +191,7 @@
             android:id="@+id/suggestedLotBar"
             android:max="100"
             android:progressTint="#fffa00"
-            android:progress="50"/>
+            android:progress="0"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -202,7 +202,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/suggestedLotProgressText"
-                android:text="50"
+                android:text="0"
                 android:textSize="20sp"
                 android:textColor="#2f2e2d"
                 android:textStyle="bold"/>
@@ -238,5 +238,4 @@
         android:textSize="12sp"
         android:textColor="#fffa00"
         android:editable="false"/>
-</RelativeLayout>
-<!-- From: file:/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/src/main/res/layout/activity_check_avail.xml -->
+</RelativeLayout><!-- From: file:/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/src/main/res/layout/activity_check_avail.xml -->

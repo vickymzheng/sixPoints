@@ -56,15 +56,15 @@ public class ReadFiles  extends AsyncTask<Void, Integer, String> {
         progressDialog.setMax(10);
         progressDialog.setProgress(0);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        progressDialog.show();
+        //progressDialog.show();
         super.onPreExecute();
 
     }
 
     @Override
     protected void onPostExecute(String result){
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
-        progressDialog.hide();
+        //Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        //progressDialog.hide();
     }
 
     @Override
@@ -110,5 +110,4 @@ public class ReadFiles  extends AsyncTask<Void, Integer, String> {
         }
     }
 }
-
 

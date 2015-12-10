@@ -7,15 +7,83 @@
     tools:context="app.sixpts.Arriving"
     android:background="#2f2e2d">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/pickALot"
+        android:text="@string/selectALot"
+        android:textSize="20sp"
+        android:textColor="#fffa00"
+        android:editable="false"
+        android:textStyle="bold" />
+
     <Spinner
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/pickALot"
         android:id="@+id/mapSpinner"
         android:spinnerMode="dropdown"
         android:background="#2f2e2d"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="15dp">
     </Spinner>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/arriveButton"
+        android:layout_below="@id/mapSpinner"
+        android:layout_marginTop="20dp"
+        android:text="@string/checkAvailability"
+        android:background="#222120"
+        android:textColor="#fffa00"
+        android:textSize="18sp"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentLotLayout"
+        android:layout_below="@id/arriveButton"
+        android:layout_marginTop="20dp">
+
+        <ProgressBar
+            style="@style/thickerBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/openingBar"
+            android:max="100"
+            android:progressTint="#fffa00"
+            android:progress="0"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/selectedLotProgressText"
+                android:text="0"
+                android:textSize="20sp"
+                android:textColor="#2f2e2d"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="#00000000"
+                android:text="@string/recent"
+                android:textSize="20sp"
+                android:textColor="#2f2e2d"
+                android:textStyle="bold"
+                android:editable="false" />
+        </LinearLayout>
+    </FrameLayout>
 
 
     <TextView

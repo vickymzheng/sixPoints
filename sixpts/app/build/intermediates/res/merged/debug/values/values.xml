@@ -298,6 +298,7 @@
     <string name="arriving">Arriving</string>
     <string name="best">Best Lot:</string>
     <string name="checkAvailability">Check Availability</string>
+    <string name="checkout">Checkout</string>
     <string name="chosenLot">Selected Lot</string>
     <string name="curLot">Lot:</string>
     <string name="fullness">% Full</string>
@@ -308,8 +309,9 @@
     <string name="prefs">Settings</string>
     <string name="ratehint">Rating of lot availability</string>
     <string name="rating">Full:</string>
-    <string name="selectALot">Pick a Lot</string>
-    <string name="site">sixhundredproints.appspot.com</string>
+    <string name="recent">Recent Openings</string>
+    <string name="selectALot">Select a Lot</string>
+    <string name="site">sixhundredpoints.appspot.com</string>
     <string name="spinner_titleThen">Parking Lots</string>
     <!-- From: file:/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
@@ -322,6 +324,7 @@
     <string name="title_activity_leaving">Leaving</string>
     <string name="title_activity_start">Start</string>
     <string name="website">Visit us</string>
+    <string name="whereAreYouLeaving">Where are you leaving?</string>
     <!-- From: file:/home/paulkowa/Desktop/cse442/sixPoints/sixpts/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
