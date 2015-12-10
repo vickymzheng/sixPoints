@@ -1,69 +1,76 @@
 package app.sixpts.TaskHandlers;
+import java.lang.Runnable;
+import java.util.Set;
+import java.util.Iterator;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.os.AsyncTask;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Scanner;
-
+import app.sixpts.CheckAvail;
 import app.sixpts.Data;
+import app.sixpts.CustomObjects.Tuple;
+
 
 /**
  * Created by paulkowa on 12/6/15.
  */
 public class SetRankings extends AsyncTask<Void, Integer, String> {
     Context context;
-    String selectedLot, suggestedLot;
     ProgressDialog progressDialog;
-    HashMap map;
-    String[] files;
-    AssetManager assMan;
-    Data data;
+    Activity checkActivity;
+    CheckAvail checkAvail;
     Button button;
+    Data data;
 
-    public SetRankings(Context context, Data data, Button button) {
+    public SetRankings(Context context, Button button, Activity checkActivity, CheckAvail checkAvail, Data data) {
         this.context = context;
-        this.data = data;
-        suggestedLot = data.getSelectedLot();
-        selectedLot = data.getSelectedLot();
         this.button = button;
-        map = new HashMap<String, HashMap<String, Integer>>();
-        assMan = context.getAssets();
-
+        this.checkActivity = checkActivity;
+        this.checkAvail = checkAvail;
+        this.data = data;
     }
 
     @Override
     protected String doInBackground(Void... params) {
         int i = 0;
         synchronized (this) {
+            data.setTuple(findBest());
             while (i < 10) {
                 try {
-                    wait(100);
+                    wait(50);
                     i++;
+                    checkActivity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            checkAvail.setBestLot(data.getTuple().getSuggestedLot());
+                            checkAvail.setSelectedBar(data.getTuple().getSelectedLotValue());
+                            checkAvail.setSuggestedBar(data.getTuple().getSuggestedLotValue());
+                            checkAvail.updateSelectedBarText();
+                            checkAvail.updateSuggestedBarText();
+                        }
+                    });
+
                     publishProgress(i);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         }
-        return "Download complete...";
+        return "Update complete...";
     }
 
     @Override
     protected void onPreExecute() {
         progressDialog = new ProgressDialog(context);
-        progressDialog.setTitle("Download in Progress...");
+        progressDialog.setTitle("Retrieving data...");
         progressDialog.setMax(10);
         progressDialog.setProgress(0);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.show();
-        super.onPreExecute();
-
     }
 
     @Override
@@ -71,61 +78,51 @@ public class SetRankings extends AsyncTask<Void, Integer, String> {
         Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         button.setEnabled(true);
         progressDialog.hide();
+        this.cancel(true);
     }
 
     @Override
     protected void onProgressUpdate(Integer... values) {
         int progress = values[0];
         progressDialog.setProgress(progress);
-        //textView.setText("Download in Progress...");
     }
 
-    public void buildData() {
-
-        try {
-            files = assMan.list("files");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        for(int i = 0; i < files.length; ++i) {
-            Scanner scan;
-            HashMap<String, Integer> hash;
-            try {
-                scan = new Scanner(assMan.open(files[i]));
-                hash = new HashMap<String, Integer>();
-
-                while (scan.hasNext()) {
-                    String[] current = scan.nextLine().split(" ");
-                    hash.put(current[0], Integer.valueOf(current[1]));
-                }
-                map.put(files[i].split(".")[0], hash);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-/**
-    private void findBest(String sugLot, int sugRat, int curRat) {
-        String[] selected = _selectedLot.split(" ");
+    private Tuple findBest() {
+        String[] selected = data.getSelectedLot().split(" ");
+        Tuple stats = new Tuple();
+        stats.setSelectedLot(data.getSelectedLot());
 
         if (selected.length == 2) {
-            curRat = map.get(selected[0] + selected[1]).get(String.valueOf(_month) + String.valueOf(_day) + String.valueOf(_hour) + String.valueOf(_minute) + String.valueOf(_amp));
-            sugRat = map.get(selected[0] + selected[1]).get(String.valueOf(_month) + String.valueOf(_day) + String.valueOf(_hour) + String.valueOf(_minute) + String.valueOf(_amp));
+            stats.setSelectedLotValue(data.getMap().get(selected[0] + selected[1]).get(String.valueOf(data.getMonth()) + String.valueOf(data.getDay()) + String.valueOf(data.getHour()) + String.valueOf(data.getMinute()) + String.valueOf(data.getAmp())));
         }
         else {
-            curRat = map.get(_selectedLot).get(String.valueOf(_month) + String.valueOf(_day) + String.valueOf(_hour) + String.valueOf(_minute) + String.valueOf(_amp));
-            sugRat = map.get(_selectedLot).get(String.valueOf(_month) + String.valueOf(_day) + String.valueOf(_hour) + String.valueOf(_minute) + String.valueOf(_amp));
+            stats.setSelectedLotValue(data.getMap().get(data.getSelectedLot()).get(String.valueOf(data.getMonth()) + String.valueOf(data.getDay()) + String.valueOf(data.getHour()) + String.valueOf(data.getMinute()) + String.valueOf(data.getAmp())));
         }
 
-        sugLot = _selectedLot;
+        Set<String> lots = data.getMap().keySet();
+        Iterator lotIter = lots.iterator();
+        // Iterate through lot lists
+        while(lotIter.hasNext()) {
+            String current = lotIter.next().toString();
+            int value = data.getMap().get(current).get(String.valueOf(data.getMonth()) + String.valueOf(data.getDay()) + String.valueOf(data.getHour()) + String.valueOf(data.getMinute()) + String.valueOf(data.getAmp()));
+            if(value < stats.getSuggestedLotValue())
+                stats.setSuggestedLotValue(value);
+                stats.setSuggestedLot(current);
+            /**
+            Set dates = data.getMap().get(current).keySet();
+            Iterator dateIter = dates.iterator();
 
-        for (Map.Entry<String, HashMap<String, Integer>> entry : map.entrySet()) {
-            if(entry.getValue().get(String.valueOf(_month) + String.valueOf(_day) + String.valueOf(_hour) + String.valueOf(_minute) + String.valueOf(_amp)) < sugRat) {
-                sugRat = entry.getValue().get(String.valueOf(_month) + String.valueOf(_day) + String.valueOf(_hour) + String.valueOf(_minute) + String.valueOf(_amp));
-                sugLot = entry.getKey();
+            // Iterate through key values in lot lists
+
+            while (dateIter.hasNext()) {
+                String time = dateIter.next().toString();
+                if (data.getMap().get(current).get(time) < stats.getSuggestedLotValue()) {
+                    stats.setSuggestedLotValue(data.getMap().get(current).get(time));
+                    stats.setSuggestedLot(current);
+                }
             }
+             **/
         }
+        return stats;
     }
- **/
 }

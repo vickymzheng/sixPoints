@@ -127,11 +127,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:id="@+id/selectedLotProgressText"
             android:text="50"
             android:textSize="20sp"
             android:textColor="#2f2e2d"
-            android:textStyle="bold"
-            android:editable="false"/>
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -162,7 +162,6 @@
             android:text="@string/best"
             android:textSize="20sp"
             android:textColor="#fffa00"
-            android:editable="false"
             android:textStyle="bold" />
 
         <TextView
@@ -171,10 +170,9 @@
             android:layout_centerHorizontal="true"
             android:layout_weight="8"
             android:id="@+id/lotText"
-            android:text="Special Events"
+            android:text="Suggested Lot"
             android:textSize="20sp"
             android:textColor="#fffa00"
-            android:editable="false"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -203,11 +201,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:id="@+id/suggestedLotProgressText"
                 android:text="50"
                 android:textSize="20sp"
                 android:textColor="#2f2e2d"
-                android:textStyle="bold"
-                android:editable="false"/>
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -216,8 +214,7 @@
                 android:text="@string/fullness"
                 android:textSize="20sp"
                 android:textColor="#2f2e2d"
-                android:textStyle="bold"
-                android:editable="false" />
+                android:textStyle="bold" />
         </LinearLayout>
     </FrameLayout>
 

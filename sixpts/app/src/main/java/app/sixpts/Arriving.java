@@ -11,27 +11,12 @@ import android.widget.TextView;
 import app.sixpts.R;
 
 public class Arriving extends AppCompatActivity {
-    Button testButton;
-    TextView testView;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arriving);
 
-        testButton = (Button) findViewById(R.id.testButton);
-        testView = (TextView) findViewById(R.id.TEST);
-
-        testButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                /**
-                 * Execute your async task here
-                 */
-
-                testView.setText("PLACE YOUR OUTPUT STRING HERE");
-            }
-        });
     }
 
     @Override

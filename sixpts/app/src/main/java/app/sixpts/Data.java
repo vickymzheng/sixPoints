@@ -2,15 +2,15 @@ package app.sixpts;
 
 import android.app.Activity;
 import android.content.Context;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import app.sixpts.CustomObjects.Tuple;
+
 import java.util.HashMap;
 import java.util.Calendar;
 
-import app.sixpts.TaskHandlers.SetRankings;
 
 
 /**
@@ -23,11 +23,10 @@ public class Data extends Activity {
     private HashMap<String, HashMap<String, Integer>> _map;
     private TextView suggestedLot, selectedLot;
     private ProgressBar selectedBar, suggestedBar;
-    private SetRankings rankings;
     private Spinner selectedLotSpinner;
-    private Button button;
+    private Tuple tuple;
 
-    public Data(Button button, TextView suggestedLot, TextView selectedLot, ProgressBar selectedBar, ProgressBar suggestedBar, Spinner selectedLotSpinner, Context context) {
+    public Data(TextView suggestedLot, TextView selectedLot, ProgressBar selectedBar, ProgressBar suggestedBar, Spinner selectedLotSpinner, Context context) {
         // Set class variables
         this.context = context;
         this.suggestedBar = suggestedBar;
@@ -35,10 +34,6 @@ public class Data extends Activity {
         this.suggestedLot = suggestedLot;
         this.selectedLot = selectedLot;
         this.selectedLotSpinner = selectedLotSpinner;
-        this.button = button;
-
-        // Create SetRankings
-        rankings = new SetRankings(context, this, button);
 
         // Set spinner values to current day / time
         Calendar c = Calendar.getInstance();
@@ -58,56 +53,29 @@ public class Data extends Activity {
         if (_amp == 1 || _hour == 12) { _hour = _hour - 12; }
     }
 
-    public void updateRating() {
-        //Toast.makeText(context, _selectedLot, Toast.LENGTH_SHORT).show();
+    public void setLot(String selectedLot) { _selectedLot = selectedLot; }
 
-    }
+    public void setMonth(int month) { _month = month; }
 
-    public void setLot(String selectedLot) {
-        _selectedLot = selectedLot;
-        updateRating();
-    }
+    public void setDay(int day) { _day = day; }
 
-    public void setMonth(int month) {
-        _month = month;
-        updateRating();
-    }
+    public void setHour(int hour) { _hour = hour; }
 
-    public void setDay(int day) {
-        _day = day;
-        updateRating();
-    }
+    public void setMinute(int minute) { _minute = minute; }
 
-    public void setHour(int hour) {
-        _hour = hour;
-        updateRating();
-    }
+    public void setAmp(int amp) { _amp = amp; }
 
-    public void setMinute(int minute) {
-        _minute = minute;
-        updateRating();
-    }
+    public void setMap(HashMap<String, HashMap<String, Integer>> map) { _map = map; }
 
-    public void setAmp(int amp) {
-        _amp = amp;
-        updateRating();
-    }
-
-    public Spinner getLotSpinner() { return selectedLotSpinner; }
+    public void setTuple(Tuple tuple) { this.tuple = tuple; }
 
     public String getSelectedLot() { return _selectedLot; }
 
-    public TextView getSuggestedView() { return suggestedLot; }
-
     public TextView getSelectedView() { return selectedLot;}
-
-    public SetRankings getRankings() { return rankings; }
 
     public int getMonth() { return _month; }
 
-    public int getDay() {
-        return _day;
-    }
+    public int getDay() { return _day; }
 
     public int getHour() {
         return _hour;
@@ -117,5 +85,8 @@ public class Data extends Activity {
 
     public int getAmp() { return _amp; }
 
+    public Tuple getTuple() { return tuple; }
+
+    public HashMap<String, HashMap<String, Integer>> getMap() { return _map; }
 
 }
