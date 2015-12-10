@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".Main"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="app.sixpts.Main" />
 
@@ -21,7 +22,8 @@
         </activity>
         <activity
             android:name=".Start"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +32,8 @@
         </activity>
         <activity
             android:name=".Arriving"
-            android:label="@string/title_activity_arriving" >
+            android:label="@string/title_activity_arriving"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="app.sixpts.Arriving" />
 
@@ -39,7 +42,8 @@
         </activity>
         <activity
             android:name=".Leaving"
-            android:label="@string/title_activity_leaving" >
+            android:label="@string/title_activity_leaving"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="app.sixpts.Leaving" />
 
@@ -48,7 +52,8 @@
         </activity>
         <activity
             android:name=".CheckAvail"
-            android:label="@string/title_activity_check_availability" >
+            android:label="@string/title_activity_check_availability"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="app.sixpts.CheckAvail" />
 

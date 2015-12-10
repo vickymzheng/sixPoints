@@ -30,12 +30,6 @@
         <item>11</item>
     </string-array>
     <string-array name="map_array">
-        <item>Jacobs A</item>
-        <item>Jarvis B</item>
-        <item>Jarvis C</item>
-        <item>Jarvis A</item>
-        <item>Jarvis B</item>
-        <item>Jarvis A</item>
         <item>Baird A</item>
         <item>Baird B</item>
         <item>Cooke A</item>
@@ -50,6 +44,11 @@
         <item>Governors E</item>
         <item>Hochstetter A</item>
         <item>Hochstetter B</item>
+        <item>Jacobs A</item>
+        <item>Jacobs B</item>
+        <item>Jacobs C</item>
+        <item>Jarvis A</item>
+        <item>Jarvis B</item>
         <item>Slee A</item>
         <item>Slee B</item>
         <item>Special Events</item>
